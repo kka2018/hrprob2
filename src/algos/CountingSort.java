@@ -11,7 +11,16 @@ public class CountingSort {
         for(int i=0; i<arr.length; i++){
             count[arr[i]]++;
         }
-        return count;
+        int j=0;
+        for(int i=0; i<count.length; i++){
+            int k=count[i];
+            while(k>0){
+                arr[j] = i;
+                j++;
+                k--;
+            }
+        }
+        return arr;
     }
 
     private static final Scanner scanner = new Scanner(System.in);
@@ -41,7 +50,6 @@ public class CountingSort {
                 System.out.print(" ");
             }
         }
-
 
 
         scanner.close();
